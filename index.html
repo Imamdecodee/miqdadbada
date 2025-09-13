@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miqdad Bada A. | Full-Stack Developer & Designer</title>
+    <meta name="description" content="Portfolio of Miqdad Bada A. - Full-Stack Developer, UI Enthusiast, and Creative Designer showcasing projects in web development and graphic design.">
+    <meta name="keywords" content="Miqdad Bada, Full-Stack Developer, Front-End Engineer, UI Designer, Graphic Designer, Web Developer, Portfolio, React, Node.js, JavaScript, PHP, Python">
+    <meta name="author" content="Miqdad Bada A.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourportfolio.com/">
+    <meta property="og:title" content="Miqdad Bada A. | Full-Stack Developer & Designer">
+    <meta property="og:description" content="Portfolio of Miqdad Bada A. - Full-Stack Developer, UI Enthusiast, and Creative Designer">
+    <meta property="og:image" content="https://yourportfolio.com/images/preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourportfolio.com/">
+    <meta property="twitter:title" content="Miqdad Bada A. | Full-Stack Developer & Designer">
+    <meta property="twitter:description" content="Portfolio of Miqdad Bada A. - Full-Stack Developer, UI Enthusiast, and Creative Designer">
+    <meta property="twitter:image" content="https://yourportfolio.com/images/preview.jpg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #111111;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --accent: #0066ff;
+            --card-bg: #1d1d1f;
+            --nav-bg: rgba(10, 10, 10, 0.8);
+            --filter-bg: #2d2d2d;
+        }
+
+        [data-theme="light"] {
+            --primary-bg: #ffffff;
+            --secondary-bg: #f5f5f7;
+            --text-primary: #0a0a0a;
+            --text-secondary: #4a4a4a;
+            --card-bg: #f0f0f0;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --filter-bg: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        [data-theme="light"] header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            color: var(--accent);
+            background-color: rgba(0, 102, 255, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            background: linear-gradient(to bottom, var(--primary-bg), var(--secondary-bg));
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent), #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        /* Sections Common */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title span {
+            color: var(--accent);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--secondary-bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+        }
+
+        [data-theme="light"] .skill-list li {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-list li i {
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            background-color: var(--secondary-bg);
+        }
+
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background-color: var(--filter-bg);
+            color: var(--text-secondary);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            height: 200px;
+            background: linear-gradient(135deg, #0066ff, #00ccff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-img i {
+            font-size: 4rem;
+            color: white;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background-color: rgba(0, 102, 255, 0.2);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .project-links a:hover {
+            color: var(--accent);
+        }
+
+        .project-links a i {
+            margin-right: 0.5rem;
+        }
+
+        /* Blog Section */
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-img {
+            height: 160px;
+            background: linear-gradient(135deg, #ff6b6b, #ff9e7d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blog-img i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            color: var(--text-secondary);
+        }
+
+        .contact-details li i {
+            color: var(--accent);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+        }
+
+        [data-theme="light"] .contact-form input,
+        [data-theme="light"] .contact-form textarea {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-bg);
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        [data-theme="light"] footer {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .projects-grid,
+            .blog-posts {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Miqdad<span>.</span></a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Miqdad Bada A.</h1>
+            <h2>Full-Stack Developer & UI Enthusiast</h2>
+            <p>I build digital experiences that blend technology, design, and storytelling to create meaningful impact.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="./Miqdad_Bada_Resume.pdf" class="btn btn-outline" download>Download Résumé</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>A journey of passion, patience & persistence</h3>
+                <p>I’m Miqdad Bada A. (Imam_Decoder) — a dreamer, a builder, and a believer in the power of technology to change lives. My love for computers started back in JSS3, when my father took me and my brother to a small computer center. That moment lit a fire in me that has never gone out.</p>
+                <p>From learning graphics design and printing in secondary school, to late nights of coding and mentorship, my journey has been filled with challenges — but each challenge only made me stronger.</p>
+                <p>I live by a model I teach my students: the PPTT Model — Patience, Passion, Time, and Tools. With these four, there is no limit to what you can build.</p>
+            </div>
+            <div class="about-text">
+                <h3>What I Do</h3>
+                <p>I currently serve as the CEO of Ilm Nexus, the developer behind Techies Innovation, and the co-founder of multiple creative ventures. My mission is to use creativity and technology to build solutions that inspire, connect, and drive growth.</p>
+                <p>I am not just a developer, designer, or entrepreneur. I am a storyteller, a problem-solver, and a leader driven by the belief that with the right mindset, you can turn any idea into impact.</p>
+                <a href="#contact" class="btn">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2 class="section-title">My <span>Skills</span></h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <ul class="skill-list">
+                    <li><i class="fas fa-check"></i> HTML5</li>
+                    <li><i class="fas fa-check"></i> CSS3</li>
+                    <li><i class="fas fa-check"></i> React</li>
+                    <li><i class="fas fa-check"></i> Angular</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <ul class="skill-list">
+                    <li><i class="fas fa-check"></i> Node.js</li>
+                    <li><i class="fas fa-check"></i> Express</li>
+                    <li><i class="fas fa-check"></i> Django</li>
+                    <li><i class="fas fa-check"></i> PostgreSQL</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Programming</h3>
+                <ul class="skill-list">
+                    <li><i class="fas fa-check"></i> JavaScript</li>
+                    <li><i class="fas fa-check"></i> Python</li>
+                    <li><i class="fas fa-check"></i> PHP</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Other</h3>
+                <ul class="skill-list">
+                    <li><i class="fas fa-check"></i> Git</li>
+                    <li><i class="fas fa-check"></i> VS Code</li>
+                    <li><i class="fas fa-check"></i> Figma</li>
+                    <li><i class="fas fa-check"></i> Webpack</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">My <span>Projects</span></h2>
+        
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="design">Graphic Design</button>
+            <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Web Development Projects -->
+            <div class="project-card" data-category="web">
+                <div class="project-img">
+                    <i class="fas fa-shop"></i>
+                </div>
+                <div class="project-content">
+                    <h3>E-Commerce Platform</h3>
+                    <p>A full-featured online store with product listings, shopping cart, and secure payment processing.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Stripe</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="web">
+                <div class="project-img">
+                    <i class="fas fa-task"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Task Management App</h3>
+                    <p>A productivity application for creating, organizing, and tracking tasks with team collaboration features.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">JWT</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Graphic Design Projects -->
+            <div class="project-card" data-category="design">
+                <div class="project-img">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Brand Identity Design</h3>
+                    <p>Complete brand identity package including logo, color scheme, typography, and brand guidelines.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Illustrator</span>
+                        <span class="tech-tag">Photoshop</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        <a href="#"><i class="fab fa-behance"></i> Behance</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="design">
+                <div class="project-img">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3>UI/UX Design</h3>
+                    <p>User interface and experience design for a mobile application with focus on accessibility and usability.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe XD</span>
+                        <span class="tech-tag">Prototyping</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        <a href="#"><i class="fab fa-behance"></i> Behance</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="design">
+                <div class="project-img">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Marketing Materials</h3>
+                    <p>Series of marketing collateral including brochures, flyers, and social media graphics for a client campaign.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Illustrator</span>
+                        <span class="tech-tag">InDesign</span>
+                        <span class="tech-tag">Photoshop</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        <a href="#"><i class="fab fa-behance"></i> Behance</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="design">
+                <div class="project-img">
+                    <i class="fas fa-pen-fancy"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Logo Collection</h3>
+                    <p>Series of logo designs for various clients across different industries with unique visual identities.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Illustrator</span>
+                        <span class="tech-tag">Branding</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        <a href="#"><i class="fab fa-behance"></i> Behance</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Stack Projects -->
+            <div class="project-card" data-category="fullstack">
+                <div class="project-img">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Financial Dashboard</h3>
+                    <p>Interactive dashboard for visualizing financial data, trends, and analytics with real-time updates.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">D3.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">FastAPI</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="fullstack">
+                <div class="project-img">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="project-content">
+                    <h3>AI Chatbot</h3>
+                    <p>An intelligent chatbot using natural language processing to provide customer support and assistance.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">NLTK</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <h2 class="section-title">My <span>Blog</span></h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
+            Thoughts on development, design, and the intersection of technology and creativity.
+        </p>
+        
+        <div class="blog-posts">
+            <div class="blog-card">
+                <div class="blog-img">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="blog-content">
+                    <h3>Building Scalable React Applications</h3>
+                    <p>Learn best practices for structuring and scaling React applications for maintainability and performance.</p>
+                    <div class="blog-meta">
+                        <span>September 5, 2025</span>
+                        <span>5 min read</span>
+                    </div>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-img">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <div class="blog-content">
+                    <h3>Design Systems for Developers</h3>
+                    <p>How to create and implement design systems that bridge the gap between designers and developers.</p>
+                    <div class="blog-meta">
+                        <span>August 22, 2025</span>
+                        <span>7 min read</span>
+                    </div>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-img">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="blog-content">
+                    <h3>Launching Your First SaaS Product</h3>
+                    <p>A step-by-step guide to taking your software idea from concept to launch and beyond.</p>
+                    <div class="blog-meta">
+                        <span>August 10, 2025</span>
+                        <span>10 min read</span>
+                    </div>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Talk About Your Project</h3>
+                <p>I'm currently available for freelance work and open to interesting project opportunities. Feel free to reach out if you want to collaborate or just say hello!</p>
+                <ul class="contact-details">
+                    <li><i class="fas fa-envelope"></i> imamdeecoder@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Remote / Offa / Ilorin</li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://github.com/Imamdecodee" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ilm-nexus-79aa93346/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/mbgraphics345" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form action="https://formsubmit.co/theilmnexus@gmail.com" method="POST">
+                    <!-- Hidden Inputs -->
+                    <input type="hidden" name="_subject" value="Client need job from your portfolio">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://nexus-learn.netlify.app/thank-you.html">
+                    
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Miqdad Bada A. (Imam_Decoder). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference or respect OS preference
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            if (newTheme === 'dark') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+        
+        // Project Filtering Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Form submission handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thanks for your message! I\'ll get back to you soon.');
+            this.reset();
+        });
+
+        // Add a subtle animation to elements on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate elements on scroll
+        document.querySelectorAll('.project-card, .blog-card, .skill-category').forEach(item => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
